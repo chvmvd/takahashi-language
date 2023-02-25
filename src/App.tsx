@@ -2,7 +2,11 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 
 function App() {
-  return <>Hello World!</>;
+  return (
+    <>
+      <div>Hello World!</div>
+    </>
+  );
 }
 
 export default App;
