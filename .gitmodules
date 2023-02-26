@@ -1,0 +1,3 @@
+[submodule "src/components/brainfuck-playground"]
+	path = src/components/brainfuck-playground
+	url = git@github.com:chvmvd/brainfuck-playground.git
