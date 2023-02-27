@@ -1,4 +1,4 @@
-export const takahashiLangCommand = [
+export const availableTakahashiLangCommands = [
   "高橋",
   "髙橋",
   "高𣘺",

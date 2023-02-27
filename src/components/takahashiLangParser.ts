@@ -1,5 +1,5 @@
 import {
-  takahashiLangCommand,
+  availableTakahashiLangCommands,
   type TakahashiLangCommand,
   type TakahashiLangCommands,
   takahashiLangCommandTable,
@@ -18,7 +18,7 @@ export default function takahashiLangParser(
   let i = 0;
   while (i < sourceCode.length - 1) {
     const nextCommand = `${sourceCode[i]}${sourceCode[i + 1]}`;
-    if (takahashiLangCommand.includes(nextCommand)) {
+    if (availableTakahashiLangCommands.includes(nextCommand)) {
       takahashiLangCommands.push(nextCommand as TakahashiLangCommand);
       i += 2;
     } else {
