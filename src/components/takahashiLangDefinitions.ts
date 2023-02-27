@@ -28,3 +28,8 @@ export const takahashiLangCommandTable = {
   高槗: "[",
   髙槗: "]",
 };
+export type TakahashiLangSyntaxStatus =
+  | "OK"
+  | "Too many 髙槗!"
+  | "Too many 高槗!"
+  | "bracket mismatch!";
