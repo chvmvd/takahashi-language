@@ -1,4 +1,11 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+  useEffect,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
+import { type TakahashiLangSyntaxStatus } from "./components/takahashiLangDefinitions";
+import takahashiLangSyntaxChecker from "./components/takahashiLangSyntaxChecker";
 import {
   AppBar,
   Toolbar,
@@ -13,6 +20,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  TextField,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
@@ -131,12 +139,53 @@ function AppBarComponent(): JSX.Element {
   );
 }
 
+function ProgramComponent({
+  syntaxStatus,
+  sourceCode,
+  setSourceCode,
+}: {
+  syntaxStatus: TakahashiLangSyntaxStatus;
+  sourceCode: string;
+  setSourceCode: Dispatch<SetStateAction<string>>;
+}): JSX.Element {
+  return (
+    <>
+      <Typography variant="h5" component="h2">
+        Program
+      </Typography>
+      <TextField
+        variant="outlined"
+        error={syntaxStatus !== "OK"}
+        helperText={syntaxStatus === "OK" ? "" : syntaxStatus}
+        placeholder="Write your code here."
+        multiline
+        rows={10}
+        fullWidth
+        value={sourceCode}
+        onChange={(e) => {
+          setSourceCode(e.target.value);
+        }}
+      />
+    </>
+  );
+}
+
 function App(): JSX.Element {
+  const [sourceCode, setSourceCode] = useState<string>("");
+  const [syntaxStatus, setSyntaxStatus] =
+    useState<TakahashiLangSyntaxStatus>("OK");
+  useEffect(() => {
+    setSyntaxStatus(takahashiLangSyntaxChecker(sourceCode));
+  }, [sourceCode]);
   return (
     <>
       <AppBarComponent />
       <Toolbar />
-      <div>Hello World!</div>
+      <ProgramComponent
+        syntaxStatus={syntaxStatus}
+        sourceCode={sourceCode}
+        setSourceCode={setSourceCode}
+      />
     </>
   );
 }
