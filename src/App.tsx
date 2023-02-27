@@ -33,6 +33,7 @@ function App(): JSX.Element {
   return (
     <>
       <AppBarComponent
+        title="たかはし Language Playground"
         GitHubUrl="https://github.com/chvmvd/takahashi-language/"
         availableCommands={availableTakahashiLangCommands}
       />
