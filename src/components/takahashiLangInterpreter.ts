@@ -13,5 +13,5 @@ export default function takahashiLangInterpreter(
   input: string
 ): { output: string; memory: Memory; pointer: number } {
   const brainfuckCommands = takahashiLangParser(sourceCode);
-  return brainfuckInterpreter(brainfuckCommands.join(), input);
+  return brainfuckInterpreter(brainfuckCommands.join(""), input);
 }
