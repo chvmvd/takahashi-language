@@ -15,9 +15,10 @@ export default function takahashiLangParser(
   sourceCode: string
 ): BrainfuckCommands {
   const takahashiLangCommands: TakahashiLangCommands = [];
+  const splittedSourceCode: string[] = sourceCode.match(/./gu) ?? [];
   let i = 0;
-  while (i < sourceCode.length - 1) {
-    const nextCommand = `${sourceCode[i]}${sourceCode[i + 1]}`;
+  while (i < splittedSourceCode.length - 1) {
+    const nextCommand = `${splittedSourceCode[i]}${splittedSourceCode[i + 1]}`;
     if (availableTakahashiLangCommands.includes(nextCommand)) {
       takahashiLangCommands.push(nextCommand as TakahashiLangCommand);
       i += 2;
