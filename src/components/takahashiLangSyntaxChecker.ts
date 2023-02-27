@@ -2,6 +2,11 @@ import takahashiLangParser from "./takahashiLangParser";
 import brainfuckSyntaxChecker from "./brainfuck-playground/src/components/brainfuckSyntaxChecker";
 import { type TakahashiLangSyntaxStatus } from "./takahashiLangDefinitions";
 
+/**
+ * check the syntax of the source code
+ * @param sourceCode source code
+ * @returns syntax status
+ */
 export default function takahashiLangSyntaxChecker(
   sourceCode: string
 ): TakahashiLangSyntaxStatus {
