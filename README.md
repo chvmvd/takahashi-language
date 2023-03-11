@@ -77,7 +77,7 @@ After running the command above, visit [http://localhost:5173/](http://localhost
 
 ## License
 
-Takahashi Language is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+Takahashi Language is licensed under the [MIT](LICENSE) license.
 
 Copyright © 2023 WATAHIKI Yuto.
 

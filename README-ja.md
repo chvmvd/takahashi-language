@@ -77,7 +77,7 @@ npm run dev
 
 ## ライセンス
 
-たかはし言語は [MIT](https://opensource.org/licenses/MIT) ライセンスのもとで公開されています。
+たかはし言語は [MIT](LICENSE) ライセンスのもとで公開されています。
 
 Copyright © 2023 WATAHIKI Yuto.
 
